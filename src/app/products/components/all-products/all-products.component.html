@@ -1,0 +1,98 @@
+<!--   <div class="row">
+        <div class="my-2 w-25">
+            <app-select [data]="categories" [title]="'Categories'" (selectedValue)="filterCategory($event)">  </app-select>
+        </div> 
+            <div class="row" *ngIf="!loading">
+                    <div class="col-md-4" *ngFor="let item of productList" >
+                        <app-product [data]="item" (item)="addToCard($event)"></app-product>
+                    </div>
+            </div>
+            <div class="text-center w-100" *ngIf="loading">
+                <app-spinner></app-spinner>
+            </div>
+  </div>
+ -->
+ <button class="btn btn-success" data-toggle="modal" data-target="#exampleModal">Add New Product</button>
+ <div class="row" *ngIf="!loading" >
+ <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col">Category</th>
+        <th scope="col">Price</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let item of productList">
+      <tr>
+        <th scope="row"><img src="{{item.image}}" alt=""></th>
+        <td>{{item.title}}</td>
+        <td>{{item.category}}</td>
+        <td>{{item.price}} EGP</td>
+        <td><button class="btn btn-warning" data-toggle="modal" data-target="#exampleModal" (click)="update(item)">Update</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div class="text-center w-100" *ngIf="loading">
+    <app-spinner></app-spinner>
+</div>
+
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document" style="max-width: 900px!important;">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form [formGroup]="form">
+            <div class="row">
+            <div class="col-md-4 col-sm-12">
+                <label for="">Title</label>
+                <input type="text" class="form-control" placeholder="Enter Title" formControlName="title">
+            </div>
+            <div class="col-md-4 col-sm-12">
+                <label for="">price</label>
+                <input type="number" class="form-control" placeholder="Enter Price" formControlName="price">
+            </div>
+            <div class="col-md-4 col-sm-12">
+                <app-select [data]="categories" [title]="'Categories'" (selectedValue)="getSelectedCategory($event)" [all]="false"
+                [select]="form.value.category"></app-select>
+            </div>
+            <div class="col-md-4 col-sm-12">
+                <label for="image">Image</label>
+                <img src="{{base64}}" alt="">
+                <input type="file" class="form-control" (change)="getImagePath($event)">
+            </div>
+            <div class="col-md-4 col-sm-12">
+                <label for="">Description</label>
+                <input type="text" class="form-control" placeholder="Enter Description" formControlName="description">
+            </div>
+        </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+           <div *ngIf="isCheck" >
+            <button type="button" class="btn btn-success" [disabled]="!form.valid" (click)="addProduct()">
+                Add New Cart
+            </button>
+           </div> 
+           <div *ngIf="!isCheck">
+            <button type="button" class="btn btn-success" [disabled]="!form.valid" (click)="updateProduct()">
+                Update Cart
+            </button>
+           </div>  
+           <!-- <button type="button" class="btn btn-success" [disabled]="!form.valid" (click)="addProduct()">Save</button> -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  

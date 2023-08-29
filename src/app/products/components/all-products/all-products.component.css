@@ -1,0 +1,50 @@
+/* h5,
+.desc{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100ch;
+}
+ .card{
+    padding: 15px;
+    margin-left: 5rem;
+    margin-top: 10px;
+} 
+
+.card img{
+    width: 200px;
+    height: 200px;
+    margin: 10px auto;
+    overflow: hidden;
+}
+.card img:hover{
+    transition: 0.4s ease-in-out;
+    transform: scale(1.2);
+}
+.btn-danger{
+    margin-top: 5px;
+}
+.price{
+    color:green;
+    font-weight: 700;
+}  */
+
+img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+}
+button{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+textarea{
+    max-width: 100%;
+    min-width: 100%;
+    max-height: 120px;
+    min-height: 120px;
+}
+.modal img{
+    width: 100%;
+    max-height: 85px;
+}

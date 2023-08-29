@@ -1,0 +1,44 @@
+nav{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 5px;
+    background-color: blue;
+     padding: 1rem 3rem; 
+    align-items: center;
+}
+
+ul{
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    margin: 0;
+}
+nav ul li,
+.logo{
+    font-size:x-large;
+    font-weight: 800;
+
+}
+nav ul li{
+    cursor: pointer;
+    text-decoration: none;
+    list-style-type: none;
+}
+button{
+    padding: 13px 3rem;
+    border: 1px solid black ;
+    background-color: blue;
+    color: black;
+    font-size: large;
+    font-weight: 500;
+    cursor: pointer;
+} 
+.active{
+    color: black;
+}
+img{
+    width: 66px;
+    height: 63px;
+    border-radius: 50px;
+}
+ 

@@ -1,0 +1,17 @@
+.box{
+    width: 90%;
+    margin: 100px auto;
+    height: 500px;
+}
+ul li{
+        font-size: 22px;
+        margin: 24px 0;
+}
+    img{
+        width: 100%;
+        max-width: 500px;
+        max-height: 500px;
+    }
+    strong{
+        color:brown;
+    }
